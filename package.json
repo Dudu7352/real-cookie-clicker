@@ -13,6 +13,7 @@
     "deploy-build": "gh-pages -d dist"
   },
   "dependencies": {
+    "ga-4-react": "^0.1.281",
     "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

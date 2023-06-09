@@ -1,7 +1,7 @@
 import "./App.css";
 import CookieButton from "./button/CookieButton";
 import React from "react";
-import ReactGA from "react-ga";
+import GA4React from "ga-4-react";
 import Cookies from "universal-cookie";
 import { v4 as uuidv4 } from "uuid";
 
@@ -9,7 +9,7 @@ function App() {
   let [cookiesCount, setCookiesCount] = React.useState(0);
   let cookies = new Cookies();
 
-  let [analytics, setAnalytics] = React.useState(false);
+  let [analytics, setAnalytics] = React.useState(true);
 
   React.useEffect(() => {
     setCookiesCount(Object.keys(cookies.getAll()).length);
@@ -30,14 +30,13 @@ function App() {
         google={false}
       />
       <h1>Your cookies: {cookiesCount}</h1>
-      {!analytics ? (
+      {analytics == null ? (
         <div className="analytics-cookie-box">
           <CookieButton
             addCookie={() => {
-              ReactGA.initialize('5390166342');
-              ReactGA.pageview(window.location.pathname + window.location.search);
+              let newAnalytics = new GA4React('G-B688DBNFZT');
               setCookiesCount(++cookiesCount);
-              setAnalytics(true);
+              newAnalytics.initialize().then(_ => {setAnalytics(true)}).catch()
             }}
             google={true}
           />

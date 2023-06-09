@@ -1,8 +1,18 @@
 .App {
   text-align: center;
-  align-items: center;
+  flex-direction: column;
 }
 
 .warning {
   color: red;
+}
+
+.analytics-cookie-box > img {
+  display: block;
+}
+
+.analytics-cookie-box > i {
+  color: #535353;
+  text-shadow: 2px 2px 2px rgb(39, 39, 39);
+  user-select: none;
 }

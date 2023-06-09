@@ -1,11 +1,21 @@
-import "./CookieButton.css"
+import "./CookieButton.css";
+import CookieSvg from "../assets/cookie.svg";
+import CookieGoogleSvg from "../assets/cookie-google.svg";
 
 export interface CookieButtonProps {
-    addCookie: () => void
+  addCookie: () => void;
+  google: boolean;
 }
 
-export default function CookieButton({addCookie}: CookieButtonProps) {
-    return (
-        <div onClick={addCookie} className='CookieButton'>🍪</div>
-    );
+export default function CookieButton(props: CookieButtonProps) {
+  let className = "CookieButton";
+  if (props.google) className += " google";
+  return (
+    <img 
+        draggable={false}
+        onClick={props.addCookie} 
+        className={className} 
+        src={props.google ? CookieGoogleSvg : CookieSvg} 
+    />
+  );
 }

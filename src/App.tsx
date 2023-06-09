@@ -34,7 +34,7 @@ function App() {
         <div className="analytics-cookie-box">
           <CookieButton
             addCookie={() => {
-              ReactGA.initialize('G-B688DBNFZT');
+              ReactGA.initialize('5390166342');
               ReactGA.pageview(window.location.pathname + window.location.search);
               setCookiesCount(++cookiesCount);
               setAnalytics(true);

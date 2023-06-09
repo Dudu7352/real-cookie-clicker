@@ -30,7 +30,7 @@ function App() {
         google={false}
       />
       <h1>Your cookies: {cookiesCount}</h1>
-      {analytics == null ? (
+      { !analytics ? (
         <div className="analytics-cookie-box">
           <CookieButton
             addCookie={() => {

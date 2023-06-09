@@ -9,7 +9,7 @@ function App() {
   let [cookiesCount, setCookiesCount] = React.useState(0);
   let cookies = new Cookies();
 
-  let [analytics, setAnalytics] = React.useState(true);
+  let [analytics, setAnalytics] = React.useState(false);
 
   React.useEffect(() => {
     setCookiesCount(Object.keys(cookies.getAll()).length);
